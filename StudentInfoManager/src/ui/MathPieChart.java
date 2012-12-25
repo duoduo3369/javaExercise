@@ -15,5 +15,4 @@ public class MathPieChart extends PieChart {
 				false);
 		this.frame = new ChartFrame("数学成绩分析表", chart);
 	}
-
 }

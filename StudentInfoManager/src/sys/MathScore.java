@@ -1,5 +1,10 @@
 package sys;
 
+import java.awt.Font;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.StandardChartTheme;
+
 public class MathScore extends MajorScore {
 	private static final String courseName = "ÊýÑ§³É¼¨";
 	public MathScore(double score,Student student) {
@@ -8,6 +13,9 @@ public class MathScore extends MajorScore {
 	/*
 	public boolean equals(Object obj){
 		if(obj instanceof MathScore){
+		
+		
+		
 			MathScore ms = (MathScore)obj;
 			System.out.println("mathscore.java"+"ms.student.equals(this.student)" + ms.student.equals(this.student));
 			return ms.student.equals(this.student);

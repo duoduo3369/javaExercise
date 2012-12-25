@@ -51,6 +51,7 @@ public class StudentTest {
 		statistic.statistic();
 		statistic.statisticMathScore.showPieChart();
 		statistic.statisticMathScore.printStudent();
+		statistic.statisticMathScore.showBarChart();
 		
 	}
 }

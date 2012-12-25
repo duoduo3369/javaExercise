@@ -5,9 +5,11 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+import ui.BarChart;
 import ui.PieChart;
 
 public abstract class StatisticMajorScore {
+	protected String name;
 	public String statisedTime;
 	protected int excellentNumber;
 	protected int wellNumber;
@@ -19,6 +21,7 @@ public abstract class StatisticMajorScore {
 	protected TreeSet<MajorScore> majorSet;
 	protected PercentObject[] percentArray;
 	protected PieChart pieChart;
+	protected BarChart barChart;
 
 	public StatisticMajorScore() {
 		excellentNumber = 0;
@@ -30,7 +33,9 @@ public abstract class StatisticMajorScore {
 		majorSet = new TreeSet<MajorScore>();
 		initPercentArray();
 	}
-
+	public String getName(){
+		return this.name;
+	}
 	private void initPercentArray() {
 		percentArray = new PercentObject[5];
 		percentArray[0] = new PercentObject("ÓÅÐã");
@@ -80,11 +85,18 @@ public abstract class StatisticMajorScore {
 	}
 
 	protected void updatePercentArray() {
+		/*
 		percentArray[0].percent = getExcellentPercent();
 		percentArray[1].percent = getWellPercent();
 		percentArray[2].percent = getMiddlePercent();
 		percentArray[3].percent = getPassPercent();
 		percentArray[4].percent = getfailPercent();
+		*/
+		percentArray[0].percent = this.excellentNumber;
+		percentArray[1].percent = this.wellNumber;
+		percentArray[2].percent = this.middleNumber;
+		percentArray[3].percent = this.passNumber;
+		percentArray[4].percent = this.failNumber;
 	}
 
 	public PercentObject[] getPercentArray() {
@@ -121,6 +133,7 @@ public abstract class StatisticMajorScore {
 	}
 
 	public abstract void showPieChart();
+	public abstract void showBarChart();
 	public double getPassPercent() {
 		if (totalNumber == 0) {
 			return 0;
