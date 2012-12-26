@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class ReadStudentInfo {
-	public static StudentManager read() {
+	public static StudentManager read() throws FileNotFoundException {
 		StudentManager studentManager = new StudentManager();
 		try {
 			FileInputStream fin = new FileInputStream("stdentinfo.ds");
@@ -23,6 +23,7 @@ public class ReadStudentInfo {
 			return studentManager;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			throw e;
 		} catch (EOFException e) {
 			//e.printStackTrace();
 		} catch (IOException e) {

@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-import ui.BarChart;
-import ui.PieChart;
+import chart.BarChart;
+import chart.PieChart;
 
 public abstract class StatisticMajorScore {
 	protected String name;
@@ -33,9 +33,11 @@ public abstract class StatisticMajorScore {
 		majorSet = new TreeSet<MajorScore>();
 		initPercentArray();
 	}
-	public String getName(){
+
+	public String getName() {
 		return this.name;
 	}
+
 	private void initPercentArray() {
 		percentArray = new PercentObject[5];
 		percentArray[0] = new PercentObject("优秀");
@@ -86,12 +88,11 @@ public abstract class StatisticMajorScore {
 
 	protected void updatePercentArray() {
 		/*
-		percentArray[0].percent = getExcellentPercent();
-		percentArray[1].percent = getWellPercent();
-		percentArray[2].percent = getMiddlePercent();
-		percentArray[3].percent = getPassPercent();
-		percentArray[4].percent = getfailPercent();
-		*/
+		 * percentArray[0].percent = getExcellentPercent();
+		 * percentArray[1].percent = getWellPercent(); percentArray[2].percent =
+		 * getMiddlePercent(); percentArray[3].percent = getPassPercent();
+		 * percentArray[4].percent = getfailPercent();
+		 */
 		percentArray[0].percent = this.excellentNumber;
 		percentArray[1].percent = this.wellNumber;
 		percentArray[2].percent = this.middleNumber;
@@ -133,7 +134,9 @@ public abstract class StatisticMajorScore {
 	}
 
 	public abstract void showPieChart();
+
 	public abstract void showBarChart();
+
 	public double getPassPercent() {
 		if (totalNumber == 0) {
 			return 0;
@@ -167,12 +170,18 @@ public abstract class StatisticMajorScore {
 	}
 
 	public void printStudent() {
+		
 		Iterator<MajorScore> iterator = majorSet.iterator();
 		while (iterator.hasNext()) {
 			MajorScore ms = (MajorScore) (iterator.next());
 			System.out.print(ms.getStudent());
 			System.out.println(": " + ms.getScore());
 		}
+	}
+
+	public void printAverageScore() {
+		System.out
+				.println("平均成绩：" + getAverageScore() + "\t总人数:" + totalNumber);
 	}
 
 	public double getGPA() {
@@ -202,6 +211,18 @@ public abstract class StatisticMajorScore {
 
 	public int getTotalNumber() {
 		return totalNumber;
+	}
+
+	public double getAverageScore() {
+		if (totalNumber == 0) {
+			return 0;
+		}
+		double totalScore = 0;
+		Iterator<MajorScore> iter = majorSet.iterator();
+		while (iter.hasNext()) {
+			totalScore += iter.next().getScore();
+		}
+		return totalScore / totalNumber;
 	}
 
 	public TreeSet<MajorScore> getMajorSet() {
