@@ -11,7 +11,7 @@ public class MathPieChart extends PieChart {
 		super(statisticMajorScore);
 	}
 
-	public void fillChartInfo() {
+	protected void fillChartInfo() {
 		this.chart = ChartFactory.createPieChart("数学成绩", dataset, true, true,
 				false);
 		this.frame = new ChartFrame("数学成绩分析表", chart);

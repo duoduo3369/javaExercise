@@ -20,7 +20,6 @@ public abstract class StatisticMajorScore {
 	protected int passNumber;
 	protected int failNumber;
 	protected int totalNumber;
-	protected double GPA;
 	protected TreeSet<MajorScore> majorSet;
 	protected PercentObject[] percentArray;
 	protected PieChart pieChart;
@@ -90,12 +89,6 @@ public abstract class StatisticMajorScore {
 	}
 
 	protected void updatePercentArray() {
-		/*
-		 * percentArray[0].percent = getExcellentPercent();
-		 * percentArray[1].percent = getWellPercent(); percentArray[2].percent =
-		 * getMiddlePercent(); percentArray[3].percent = getPassPercent();
-		 * percentArray[4].percent = getfailPercent();
-		 */
 		percentArray[0].percent = this.excellentNumber;
 		percentArray[1].percent = this.wellNumber;
 		percentArray[2].percent = this.middleNumber;
@@ -151,19 +144,6 @@ public abstract class StatisticMajorScore {
 		statisedTime = getCurrentDatetime();
 	}
 
-	public double calculateGPA() {
-		if (totalNumber == 0) {
-			return 0;
-		}
-		double totalScore = 0;
-		Iterator<MajorScore> iterator = majorSet.iterator();
-		while (iterator.hasNext()) {
-			MajorScore ms = (MajorScore) (iterator.next());
-			totalScore += ms.getScore();
-		}
-		return totalScore / totalNumber;
-	}
-
 	public String getCurrentDatetime() {
 		Date currentTime = new Date();
 		DateFormat df = DateFormat.getDateTimeInstance(DateFormat.LONG,
@@ -185,11 +165,6 @@ public abstract class StatisticMajorScore {
 	public void printAverageScore() {
 		System.out
 				.println("平均成绩：" + getAverageScore() + "\t总人数:" + totalNumber);
-	}
-
-	public double getGPA() {
-		GPA = calculateGPA();
-		return GPA;
 	}
 
 	public int getExcellentNumber() {
