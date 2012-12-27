@@ -22,7 +22,7 @@ public class ReadStudentInfo {
 			oin.close();
 			return studentManager;
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			throw e;
 		} catch (EOFException e) {
 			//e.printStackTrace();

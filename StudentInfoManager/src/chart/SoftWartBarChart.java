@@ -6,15 +6,15 @@ import org.jfree.chart.plot.PlotOrientation;
 
 import statistic.StatisticMajorScore;
 
-public class MathBarChart extends BarChart {
+public class SoftWartBarChart extends BarChart {
 
-	public MathBarChart(StatisticMajorScore statisticMajorScore) {
+	public SoftWartBarChart(StatisticMajorScore statisticMajorScore) {
 		super(statisticMajorScore);
 	}
 
 	protected void fillChartInfo() {
 		this.chart = ChartFactory.createBarChart(
-				"数学成绩", // chart title
+				"软件工程成绩", // chart title
 				"分类", // domain axis label
 				"人数", // range axis label
 				dataset, // data
@@ -23,7 +23,7 @@ public class MathBarChart extends BarChart {
 				true, // tooltips?
 				false // URLs?
 				);
-		this.frame = new ChartFrame("数学成绩分析表", chart);
+		this.frame = new ChartFrame("软件工程成绩分析表", chart);
 
 	}
 

@@ -2,8 +2,8 @@ package chart;
 
 import org.jfree.data.general.DefaultPieDataset;
 
+import statistic.StatisticMajorScore;
 import sys.PercentObject;
-import sys.StatisticMajorScore;
 
 public abstract class PieChart extends Chart {
 	protected DefaultPieDataset dataset;

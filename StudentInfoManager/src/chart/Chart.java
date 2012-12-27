@@ -7,8 +7,8 @@ import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.StandardChartTheme;
 
+import statistic.StatisticMajorScore;
 import sys.PercentObject;
-import sys.StatisticMajorScore;
 
 public abstract class Chart {
 	protected StatisticMajorScore statisticMajorScore;

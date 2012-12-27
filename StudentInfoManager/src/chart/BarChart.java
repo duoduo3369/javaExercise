@@ -2,8 +2,8 @@ package chart;
 
 import org.jfree.data.category.DefaultCategoryDataset;
 
+import statistic.StatisticMajorScore;
 import sys.PercentObject;
-import sys.StatisticMajorScore;
 
 public abstract class BarChart extends Chart {
 	protected DefaultCategoryDataset dataset;

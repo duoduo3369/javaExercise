@@ -11,7 +11,7 @@ import score.MathScore;
 import score.SoftWareScore;
 import statistic.Statistic;
 
-public class StudentTest {
+public class Loader {
 	private ArrayList lines;
 	private BufferedReader input = new BufferedReader(new InputStreamReader(
 			System.in));
@@ -32,7 +32,6 @@ public class StudentTest {
 	}
 
 	public void run() {
-
 		while (true) {
 			glue();
 		}
@@ -328,7 +327,7 @@ public class StudentTest {
 					break;
 				}
 				studentManager.deleteStudent(no);
-				SaveStudentInfo.save(studentManager);
+				SaveStudentInfo.save(studentManager,false);
 				System.out.println("已删除。");
 				// input.reset();
 			} catch (IOException e) {
@@ -432,33 +431,4 @@ public class StudentTest {
 
 	}
 
-	public static void main(String[] args) {
-		StudentTest st = new StudentTest();
-		st.run();
-		/*
-		 * StudentManager studentManager = new StudentManager(); Student a = new
-		 * Student("101", "李广"); Student b = new Student("102", "夏侯渊"); Student
-		 * c = new Student("103", "张颌"); Student a1 = new Student("104", "abc");
-		 * Student b1 = new Student("105", "c"); Student c1 = new Student("106",
-		 * "bc"); Student d1 = new Student("107", "bc");
-		 * 
-		 * MathScore ms = new MathScore(0, a); MathScore ms2 = new MathScore(12,
-		 * b); MathScore ms3 = new MathScore(90.1, c); MathScore msa = new
-		 * MathScore(80, a1); MathScore msa1 = new MathScore(75, b1); MathScore
-		 * msb1 = new MathScore(62, c1); MathScore msc1 = new MathScore(43, d1);
-		 * SoftWareScore ss = new SoftWareScore(79, a);
-		 * 
-		 * a.changeMajorScore(msa); studentManager.addStudent(a);
-		 * studentManager.addStudent(b); studentManager.addStudent(c);
-		 * studentManager.addStudent(a1); studentManager.addStudent(b1);
-		 * studentManager.addStudent(c1); studentManager.addStudent(d1);
-		 * 
-		 * SaveStudentInfo.save(studentManager); StudentManager sm2 =
-		 * ReadStudentInfo.read(); sm2.printAllStudent(); Student liguang =
-		 * sm2.getStudent("101"); sm2.changeStudentMajorScore("101", new
-		 * MathScore(91.2, liguang)); sm2.getStudent("101").printMajorScores();
-		 * Statistic statistic = new Statistic(studentManager);
-		 * statistic.statistic();
-		 */
-	}
 }

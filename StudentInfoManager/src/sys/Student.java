@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import score.MajorScore;
+
 public class Student implements Serializable{
 	private String no;
 	private String name;

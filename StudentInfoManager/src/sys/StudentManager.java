@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import score.MajorScore;
+
 public class StudentManager{
 	private HashMap<String,Student> studentMap;
 	public StudentManager(){
