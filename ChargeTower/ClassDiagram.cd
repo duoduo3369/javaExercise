@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ChargeTower.ListenerObject">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEBAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ListenerObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargeTower.Tower" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAABAAAAAAAAAAAAAIIAADAAAAAAAAAAA=</HashCode>
+      <FileName>Tower.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ChargeTower.ARenderObject" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMAAAABAAAAAAAgAIAAEAAAAAIAAIgCBAIAAAAAAA=</HashCode>
+      <FileName>RenderObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ChargeTower.RenderTower">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABAAAAAAAAA=</HashCode>
+      <FileName>RenderTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargeTower.Phone">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Phone.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ChargeTower.RenderPhone">
+    <Position X="8.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAIAAAAIAAAAAAAAAAAAAAAIIQBAAAAAAAAA=</HashCode>
+      <FileName>RenderPhone.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ChargeTower.AControlObject">
+    <Position X="2" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAAAAAAAAAAAAAAAAAAgAAAIgAAAAAAAAAAA=</HashCode>
+      <FileName>AControlObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargeTower.ControlTower">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAQCIAACAAAAAAAAAgAAAAIQgAAAIAIAAAAAAAAAA=</HashCode>
+      <FileName>ControlTower.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ChargeTower.RenderLabelPhone">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAIAAABAAAAAAAAAAAAAAEAQgAAAAAAAAAAA=</HashCode>
+      <FileName>RenderLabelPhone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ChargeTower.ISubject" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAIIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ISubject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ChargeTower.IListener" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IListener.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ChargeTower.ITimerList">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ITimerList.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ChargeTower.ILocation">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>ILocation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="微软雅黑" Size="9.75" />
+</ClassDiagram>

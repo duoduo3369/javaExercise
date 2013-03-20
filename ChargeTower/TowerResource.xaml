@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<DrawingBrush x:Key="TowerResource" Stretch="Uniform">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing Brush="White" Geometry="F1M6,91.125L19.25,9.875 44.7549,9.87501 47.8516,28.0676 58.5,90.625">
+					<GeometryDrawing.Pen>
+						<Pen Brush="Black" LineJoin="Round"/>
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing Brush="White" Geometry="F1M16.25,30.625C48.25,30.125,48.5,30.125,48.5,30.125">
+					<GeometryDrawing.Pen>
+						<Pen Brush="Black" LineJoin="Round"/>
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing Brush="White" Geometry="F1M11.5,58.875L52.75,58.625">
+					<GeometryDrawing.Pen>
+						<Pen Brush="Black" LineJoin="Round"/>
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+</ResourceDictionary>
