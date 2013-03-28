@@ -16,23 +16,9 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-<meat http-equiv="Content-Type" content="text/html" charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css"
-	href="css/bootstrap-responsive.css">
-<script type="text/javascript" src="js/jquery-1.9.1.js">
-	
-</script>
-<script type="text/javascript" src="js/bootstrap.js">
-	
-</script>
-<script type="text/javascript" src="js/password.js">
-	
-</script>
-
-
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<%@include file="duoduo/headers.html"%>
+<script type="text/javascript" src="js/password.js"></script>
 </head>
 
 <body>
@@ -84,7 +70,9 @@
 			</form>
 		</div>
 		<div class="show"></div>
-		<div class="checkagain"><button class="btn btn-success checkagain" >再来一次</button></div>
+		<div class="checkagain">
+			<button class="btn btn-success checkagain">再来一次</button>
+		</div>
 	</div>
 	<footer class="footer">
 	<div class="container">

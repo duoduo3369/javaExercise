@@ -8,7 +8,7 @@ function getResult(data)
 	$(data).find('infomation').each(function(i){
 		var username = $(this).children('username').text();
 		var password = $(this).children('password').text();
-		$('.show').append('<p>用户名:'+username+'</p>')
+		$('.show').append('<p>用户名'+username+'</p>')
 		.append('<p>密码:'+password+'</p>');
 	});	
 }
@@ -21,11 +21,11 @@ function showPassWord()
 		if(data == "OK"){
 			var username = inputdata['username'];
 			var password = inputdata['password'];
-			$('.show').append('<p>验证成功</p>').append('<p>用户名:'+username+'</p>')
+			$('.show').append('<p>测试成功</p>').append('<p>用户名'+username+'</p>')
 			.append('<p>密码:'+password+'</p>');
 		}
 		else{
-			$('.show').append("<p>非法的用户名</p>");
+			$('.show').append("<p>非法用户名</p>");
 		}
 	});
 }

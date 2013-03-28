@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="customText">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>
