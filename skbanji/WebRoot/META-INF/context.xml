@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+    
+    <Resource name="jdbc/skbanjiDB" auth="Container"
+     type="javax.sql.DataSource" username="root" password="duoduo"
+     driverClassName="com.mysql.jdbc.Driver"
+     url="jdbc:mysql://127.0.0.1:3306/skbanji"
+     maxActive="8"
+    />
+    
+</Context>
