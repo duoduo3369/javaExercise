@@ -8,8 +8,31 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description>注册</description>
+    <display-name>注册模块</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.sinaapp.skbanji.account.action.Register</servlet-class>
+  </servlet>
+  <servlet>
+    <description>Judge user IsRegisted</description>
+    <display-name>IsRegisted</display-name>
+    <servlet-name>IsRegisted</servlet-name>
+    <servlet-class>com.sinaapp.skbanji.account.action.IsRegisted</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/servlet/account/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IsRegisted</servlet-name>
+    <url-pattern>/servlet/IsRegisted</url-pattern>
+  </servlet-mapping>
   <resource-ref>
       <description>DB Connection</description>
+  
       <res-ref-name>jdbc/skbanjiDB</res-ref-name>
       <res-type>javax.sql.DataSource</res-type>
       <res-auth>Container</res-auth>

@@ -9,8 +9,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sinaapp.skbanji.account.User;
 import com.sinaapp.skbanji.account.dao.UserDaoOld;
+import com.sinaapp.skbanji.account.model.User;
 import com.sinaapp.skbanji.db.util.DBHelper;
 
 public class UserTest {

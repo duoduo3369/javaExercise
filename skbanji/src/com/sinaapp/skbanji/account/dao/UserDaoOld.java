@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 import org.omg.CORBA.PRIVATE_MEMBER;
 
-import com.sinaapp.skbanji.account.User;
+import com.sinaapp.skbanji.account.model.User;
 import com.sinaapp.skbanji.db.util.DBHelper;
 
 public class UserDaoOld {

@@ -14,7 +14,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sinaapp.skbanji.account.User;
+import com.sinaapp.skbanji.account.model.User;
 import com.sinaapp.skbanji.db.util.DBManager;
 
 public class TestDBManager {
