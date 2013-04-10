@@ -32,7 +32,6 @@ function isAllValid() {
 $(document).ready(function() {
 
 			$("input[name=username]").blur(function() {
-
 						$.get("/skbanji/servlet/IsRegisted", {
 									username : $(this).val()
 								}, function(response) {

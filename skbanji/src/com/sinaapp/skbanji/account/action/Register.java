@@ -15,6 +15,11 @@ import com.sinaapp.skbanji.servlet.util.ServletUtills;
 public class Register extends HttpServlet {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3965207393214421687L;
+
+	/**
 	 * Constructor of the object.
 	 */
 	public Register() {
@@ -71,7 +76,7 @@ public class Register extends HttpServlet {
 
 		response.setContentType("text/html");
 		String success = request.getParameter("success");
-		if (success == null) {
+		if (success == null || success.equals("")) {
 			return;
 		}
 		String username = request.getParameter("username");

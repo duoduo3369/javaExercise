@@ -7,7 +7,7 @@
 <html>
 <head>
 
-<title>My JSP 'register.jsp' starting page</title>
+<title>新用户注册</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">

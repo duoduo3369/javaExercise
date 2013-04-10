@@ -2,7 +2,6 @@ package com.sinaapp.skbanji.db.util;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,9 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.sql.ResultSetMetaData;
 
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 public class DBManager {
 	private IConnection iConnection;
@@ -27,6 +24,9 @@ public class DBManager {
 		//iConnection = new DriverManagerConnection();
 	}
 
+	public void setConnection(IConnection iConnection){
+		this.iConnection = iConnection;
+	}
 	public Connection getConnection() throws NamingException {
 		try {
 			connection = iConnection.getConnection();

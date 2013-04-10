@@ -15,6 +15,11 @@ import com.sinaapp.skbanji.servlet.util.ServletUtills;
 public class IsRegisted extends HttpServlet {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6955075636998219594L;
+
+	/**
 	 * Constructor of the object.
 	 */
 	public IsRegisted() {
@@ -69,23 +74,7 @@ public class IsRegisted extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-		out.println("<HTML>");
-		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-		out.println("  <BODY>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the POST method");
-		out.println("  </BODY>");
-		out.println("</HTML>");
-		out.flush();
-		out.close();
-	}
+	
 
 	/**
 	 * Initialization of the servlet. <br>

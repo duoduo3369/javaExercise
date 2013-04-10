@@ -1,13 +1,7 @@
 package com.sinaapp.skbanji.account.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.naming.NamingException;
 
 import com.sinaapp.skbanji.account.model.User;
 import com.sinaapp.skbanji.db.util.DBManager;
@@ -72,6 +66,10 @@ public class UserDao {
 		}
 
 		return user;
+	}
+
+	public void setDbManager(DBManager dbManager) {
+		this.dbManager = dbManager;
 	}
 
 }

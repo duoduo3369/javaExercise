@@ -10,13 +10,80 @@ CREATE TABLE IF NOT EXISTS user
     email VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id),
     UNIQUE (username)
-);
+)DEFAULT CHARACTER SET=utf8;
 
-CREATE TABLE IF NOT EXISTS test_constraint
+
+CREATE TABLE IF NOT EXISTS school 
 (
     id INT NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    FOREIGN KEY(user_id)
-    REFERENCES user (id), 
+    name VARCHAR(100) NOT NULL,
 	PRIMARY KEY(id)
-);
+)DEFAULT CHARACTER SET=utf8;
+CREATE TABLE IF NOT EXISTS college
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    school_id INT NOT NULL, 
+	PRIMARY KEY(id),
+    FOREIGN KEY(school_id) REFERENCES school (id)
+)DEFAULT CHARACTER SET=utf8;
+CREATE TABLE IF NOT EXISTS major
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    college_id INT NOT NULL,
+	PRIMARY KEY(id),
+    FOREIGN KEY(college_id) REFERENCES college (id)
+)DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE IF NOT EXISTS banji
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    major_id INT NOT NULL,
+	PRIMARY KEY(id),
+    FOREIGN KEY(major_id) REFERENCES major (id)
+)DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE IF NOT EXISTS student
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+	sex char(1) NOT NULL DEFAULT 'M',
+    student_number VARCHAR(20),
+	PRIMARY KEY(id),
+    FOREIGN KEY(id) REFERENCES user (id)
+)DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE IF NOT EXISTS banji_student_relation
+(
+	banji_id INT NOT NULL,
+	student_id INT NOT NULL, 
+	FOREIGN KEY(banji_id) REFERENCES banji (id),
+	FOREIGN KEY(student_id) REFERENCES student (id)
+)DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE IF NOT EXISTS tucao
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    content LONGTEXT,
+    publish_date date NOT NULL,	
+    banji_id INT NOT NULL,
+	student_id INT NOT NULL,
+	PRIMARY KEY(id),	
+	FOREIGN KEY(banji_id) REFERENCES banji (id),
+	FOREIGN KEY(student_id) REFERENCES student (id)
+)DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE IF NOT EXISTS article
+(
+    id INT NOT NULL AUTO_INCREMENT,
+	title VARCHAR(255) NOT NULL,
+    content LONGTEXT,
+    publish_date date NOT NULL,	
+    banji_id INT NOT NULL,
+	student_id INT NOT NULL,
+	PRIMARY KEY(id),	
+	FOREIGN KEY(banji_id) REFERENCES banji (id),
+	FOREIGN KEY(student_id) REFERENCES student (id)
+)DEFAULT CHARACTER SET=utf8;

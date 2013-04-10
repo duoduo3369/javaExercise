@@ -1,0 +1,13 @@
+E:\VSProject\calcuator\calcuator\bin\Debug\calcuator.exe
+E:\VSProject\calcuator\calcuator\bin\Debug\calcuator.pdb
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\MainWindow.baml
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\MainWindow.g.cs
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\App.g.cs
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\calcuator_MarkupCompile.cache
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\calcuator.g.resources
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\calcuator.Properties.Resources.resources
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\calcuator.exe
+E:\VSProject\calcuator\calcuator\obj\x86\Debug\calcuator.pdb
