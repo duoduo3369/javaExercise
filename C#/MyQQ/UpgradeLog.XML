@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MyQQ">
+</Property><Property Name="解决方案文件" Value="E:\作业\c#\MyQQ\项目参考代码\MyQQ\MyQQ.sln">
+</Property><Property Name="用户选项文件" Value="E:\作业\c#\MyQQ\项目参考代码\MyQQ\MyQQ.suo">
+</Property><Property Name="Date" Value="2013年4月11日 星期四">
+</Property><Property Name="Time" Value="13:22">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MyQQ.sln" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ.sln">
+</Event><Event ErrorLevel="0" Project="" Source="MyQQ.suo" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ.suo">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\MyQQ.csproj" Description="项目文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\MyQQ.csproj">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\ChatForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\ChatForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\ChatForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\ChatForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\FacesForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\FacesForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\FacesForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\FacesForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\RegisterForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\RegisterForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\RegisterForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\RegisterForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\DBHelper.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\DBHelper.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\LoginForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\LoginForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\LoginForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\LoginForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\MainForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\MainForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\MainForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\MainForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\PersonalInfoForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\PersonalInfoForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\PersonalInfoForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\PersonalInfoForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\Program.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\Program.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\Properties\AssemblyInfo.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\Properties\Resources.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\Properties\Settings.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\RequestForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\RequestForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\RequestForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\RequestForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\SearchFriendForm.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\SearchFriendForm.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\SearchFriendForm.Designer.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\SearchFriendForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\UserHelper.cs" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\UserHelper.cs">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\Properties\Settings.settings" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\MyQQ.ico" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\MyQQ.ico">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\ChatForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\ChatForm.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\FacesForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\FacesForm.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\RegisterForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\RegisterForm.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\LoginForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\LoginForm.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\MainForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\MainForm.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\PersonalInfoForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\PersonalInfoForm.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\Properties\Resources.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\RequestForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\RequestForm.resx">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\SearchFriendForm.resx" Description="文件已成功备份为 E:\作业\c#\MyQQ\项目参考代码\MyQQ\Backup\MyQQ\SearchFriendForm.resx">
+</Event><Event ErrorLevel="1" Project="MyQQ" Source="MyQQ\MyQQ.csproj" Description="您的项目以 .NET Framework 2.0 或 3.0 为目标。如果您的项目使用的程序集需要更新的 .NET Framework，则项目生成将失败。通过单击项目菜单上的“属性”，然后在“.NET Framework”下拉框中选择一个新版本，可以更改 .NET Framework 的版本。(在 Visual Basic 中，可在单击“高级编辑器选项...”按钮时显示的“编译”选项卡上找到此下拉框。)">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\MyQQ.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="MyQQ" Source="MyQQ\MyQQ.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MyQQ.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="MyQQ.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MyQQ" Source="MyQQ\MyQQ.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>
