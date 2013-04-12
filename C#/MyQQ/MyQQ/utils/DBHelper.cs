@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using MyQQ.utils;
 using System.Data.Common;
 using MyQQ.dbmanagers;
+using MyQQ.interfaces;
+using MyQQ.factorys;
 
 namespace MyQQ
 {
@@ -12,25 +14,30 @@ namespace MyQQ
     class DBHelper
     {
         private static string connString = "Data Source=.;Initial Catalog=MyQQ;User ID=sa;Pwd=sa";
-        private static DbConnection connection = (new SqlConnectionManager()).GetConnection();
-        private static SqlCommandManager sqlCommandManager = new SqlCommandManager();
-        private static SqlDataAdapterManager sqlDataAdapterManager = new SqlDataAdapterManager();
+        private static IDbManagerFactory dbManagerFactory = new SqlManagerFactory();
+
+        private static IConnection connectionManager = dbManagerFactory.GetConnectionManager();
+        private static ICommand commandManager = dbManagerFactory.GetCommandManager();
+        private static IDataAdapter dataAdapterManager = dbManagerFactory.GetDataAdapterManager();
+        private static DbConnection connection = connectionManager.GetConnection();
+
+
         public static DbConnection GetConnection()
         {
             return connection;
         }
-        public static DbCommand GetCommand() 
+        public static DbCommand GetCommand()
         {
-            return sqlCommandManager.GetCommand();
+            return commandManager.GetCommand();
         }
         public static DbCommand GetCommand(string sql, DbConnection connection)
         {
-            return sqlCommandManager.GetCommand(sql, connection);
+            return commandManager.GetCommand(sql, connection);
 
         }
         public static DbDataAdapter GetDataAdapter(string sql, DbConnection connection)
         {
-            return sqlDataAdapterManager.GetDataAdapter(sql, connection);
+            return dataAdapterManager.GetDataAdapter(sql, connection);
         }
         public static string GetConnectionString()
         {
