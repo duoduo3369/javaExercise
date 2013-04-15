@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="7ecc38f6-006f-4770-92fa-53420eaf03ab" name="Administrator@PC201303101751 2013-04-15 14:24:37" runUser="PC201303101751\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="c01c5c29-c5de-4fb5-8960-d83782060d91">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="Administrator_PC201303101751 2013-04-15 14_24_37">
+      <DeploymentItem filename="E:\VSProject\MyQQ\MyQQ\bin\Debug\MyQQ.exe" />
+      <DeploymentItem filename="E:\VSProject\MyQQ\MyQQ\bin\Debug\SideBar.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-04-15T14:24:37.2079941+08:00" queuing="2013-04-15T14:24:41.1662205+08:00" start="2013-04-15T14:24:41.4942392+08:00" finish="2013-04-15T14:24:49.1856791+08:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="sqlTest" storage="e:\vsproject\myqq\testmyqq\bin\debug\testmyqq.dll" id="c69b01d4-6cc3-4d6c-38b4-5cdb8070962e">
+      <Execution id="4a030b49-88e1-45ef-a141-f99c2f9c7ef0" />
+      <TestMethod codeBase="E:/VSProject/MyQQ/TestMyQQ/bin/Debug/TestMyQQ.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestMyQQ.EntityFrameworkCRUDTest, TestMyQQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="sqlTest" />
+    </UnitTest>
+    <UnitTest name="EntityFrameworkCRUDConstructorTest" storage="e:\vsproject\myqq\testmyqq\bin\debug\testmyqq.dll" id="50c6a964-f8ec-1e11-8aa0-a7f17bde8ee5">
+      <Execution id="2d629993-59c7-4319-93ab-4a74a17d19fc" />
+      <TestMethod codeBase="E:/VSProject/MyQQ/TestMyQQ/bin/Debug/TestMyQQ.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestMyQQ.EntityFrameworkCRUDTest, TestMyQQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EntityFrameworkCRUDConstructorTest" />
+    </UnitTest>
+    <UnitTest name="CountTest" storage="e:\vsproject\myqq\testmyqq\bin\debug\testmyqq.dll" id="d0734733-d5a1-8f31-a432-02844054dcac">
+      <Execution id="6eebf3ba-7664-4829-911d-e786ac4c5904" />
+      <TestMethod codeBase="E:/VSProject/MyQQ/TestMyQQ/bin/Debug/TestMyQQ.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestMyQQ.EntityFrameworkCRUDTest, TestMyQQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CountTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="50c6a964-f8ec-1e11-8aa0-a7f17bde8ee5" executionId="2d629993-59c7-4319-93ab-4a74a17d19fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c69b01d4-6cc3-4d6c-38b4-5cdb8070962e" executionId="4a030b49-88e1-45ef-a141-f99c2f9c7ef0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0734733-d5a1-8f31-a432-02844054dcac" executionId="6eebf3ba-7664-4829-911d-e786ac4c5904" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2d629993-59c7-4319-93ab-4a74a17d19fc" testId="50c6a964-f8ec-1e11-8aa0-a7f17bde8ee5" testName="EntityFrameworkCRUDConstructorTest" computerName="PC201303101751" duration="00:00:00.4515325" startTime="2013-04-15T14:24:41.5992452+08:00" endTime="2013-04-15T14:24:47.4695810+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d629993-59c7-4319-93ab-4a74a17d19fc">
+    </UnitTestResult>
+    <UnitTestResult executionId="4a030b49-88e1-45ef-a141-f99c2f9c7ef0" testId="c69b01d4-6cc3-4d6c-38b4-5cdb8070962e" testName="sqlTest" computerName="PC201303101751" duration="00:00:00.7885748" startTime="2013-04-15T14:24:47.5005828+08:00" endTime="2013-04-15T14:24:48.3096290+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4a030b49-88e1-45ef-a141-f99c2f9c7ef0">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 TestMyQQ.EntityFrameworkCRUDTest.sqlTest 引发了异常: 
+System.Data.EntitySqlException: 在当前范围或上下文中无法解析“Users”。请确保所有引用的变量都在范围内，已加载需要的架构，并且命名空间引用正确。 附近 简单标识符, 列 1, 列 22.</Message>
+          <StackTrace>    在 System.Data.Common.EntitySql.SemanticAnalyzer.ConvertValueExpression(Node astExpr, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ProcessAliasedFromClauseItem(AliasedExpr aliasedExpr, SemanticResolver sr, List`1&amp; scopeEntries)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ProcessFromClauseItem(FromClauseItem fromClauseItem, SemanticResolver sr, List`1&amp; scopeEntries)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ProcessFromClause(FromClause fromClause, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ConvertQuery(Node expr, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.Convert(Node astExpr, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ConvertValueExpression(Node astExpr, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ConvertQueryStatementToDbExpression(Statement astStatement, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ConvertQueryStatementToDbCommandTree(Statement astStatement, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.ConvertStatement(Statement astStatement, SemanticResolver sr)
+   在 System.Data.Common.EntitySql.SemanticAnalyzer.AnalyzeCommand(Node astExpr)
+   在 System.Data.Common.EntitySql.CqlQuery.&lt;AnalyzeCommandSemantics&gt;b__6(SemanticAnalyzer analyzer, Node astExpression)
+   在 System.Data.Common.EntitySql.CqlQuery.AnalyzeSemanticsCommon[TResult](Node astExpr, Perspective perspective, ParserOptions parserOptions, IEnumerable`1 parameters, IEnumerable`1 variables, Func`3 analysisFunction)
+   在 System.Data.Common.EntitySql.CqlQuery.AnalyzeCommandSemantics(Node astExpr, Perspective perspective, ParserOptions parserOptions, IEnumerable`1 parameters)
+   在 System.Data.Common.EntitySql.CqlQuery.&lt;&gt;c__DisplayClass1.&lt;Compile&gt;b__0(Node astCommand, ParserOptions validatedParserOptions)
+   在 System.Data.Common.EntitySql.CqlQuery.CompileCommon[TResult](String commandText, Perspective perspective, ParserOptions parserOptions, Func`3 compilationFunction)
+   在 System.Data.Common.EntitySql.CqlQuery.Compile(String commandText, Perspective perspective, ParserOptions parserOptions, IEnumerable`1 parameters)
+   在 System.Data.EntityClient.EntityCommand.MakeCommandTree()
+   在 System.Data.EntityClient.EntityCommand.CreateCommandDefinition()
+   在 System.Data.EntityClient.EntityCommand.TryGetEntityCommandDefinitionFromQueryCache(EntityCommandDefinition&amp; entityCommandDefinition)
+   在 System.Data.EntityClient.EntityCommand.GetCommandDefinition()
+   在 System.Data.EntityClient.EntityCommand.InnerPrepare()
+   在 System.Data.EntityClient.EntityCommand.Prepare()
+   在 System.Data.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.EntityClient.EntityCommand.ExecuteScalar[T_Result](Func`2 resultSelector)
+   在 System.Data.EntityClient.EntityCommand.ExecuteScalar()
+   在 MyQQ.EntityFrameworkCRUD.sql() 位置 E:\VSProject\MyQQ\MyQQ\EntityFrameworkCRUD.cs:行号 36
+   在 TestMyQQ.EntityFrameworkCRUDTest.sqlTest() 位置 E:\VSProject\MyQQ\TestMyQQ\EntityFrameworkCRUDTest.cs:行号 98
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6eebf3ba-7664-4829-911d-e786ac4c5904" testId="d0734733-d5a1-8f31-a432-02844054dcac" testName="CountTest" computerName="PC201303101751" duration="00:00:00.6047602" startTime="2013-04-15T14:24:48.3426309+08:00" endTime="2013-04-15T14:24:49.0006686+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6eebf3ba-7664-4829-911d-e786ac4c5904">
+    </UnitTestResult>
+  </Results>
+</TestRun>

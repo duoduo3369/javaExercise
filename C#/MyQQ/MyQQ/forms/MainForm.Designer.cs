@@ -240,6 +240,7 @@
             this.ilFaces.Images.SetKeyName(98, "99");
             this.ilFaces.Images.SetKeyName(99, "100");
             this.ilFaces.Images.SetKeyName(100, "back.bmp");
+            this.ilFaces.Images.SetKeyName(101, "101");
             // 
             // picFace
             // 
@@ -293,20 +294,20 @@
             this.tsmiAddFriend,
             this.tsmiDelete});
             this.cmsFriendList.Name = "cmsFriendList";
-            this.cmsFriendList.Size = new System.Drawing.Size(119, 70);
+            this.cmsFriendList.Size = new System.Drawing.Size(125, 70);
             this.cmsFriendList.Opening += new System.ComponentModel.CancelEventHandler(this.cmsFriendList_Opening);
             // 
             // tsmiView
             // 
             this.tsmiView.Name = "tsmiView";
-            this.tsmiView.Size = new System.Drawing.Size(118, 22);
+            this.tsmiView.Size = new System.Drawing.Size(124, 22);
             this.tsmiView.Text = "小头像";
             this.tsmiView.Click += new System.EventHandler(this.tsmiView_Click);
             // 
             // tsmiAddFriend
             // 
             this.tsmiAddFriend.Name = "tsmiAddFriend";
-            this.tsmiAddFriend.Size = new System.Drawing.Size(118, 22);
+            this.tsmiAddFriend.Size = new System.Drawing.Size(124, 22);
             this.tsmiAddFriend.Text = "加为好友";
             this.tsmiAddFriend.Visible = false;
             this.tsmiAddFriend.Click += new System.EventHandler(this.tsmiAddFriend_Click);
@@ -314,7 +315,7 @@
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(118, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(124, 22);
             this.tsmiDelete.Text = "删除";
             this.tsmiDelete.Visible = false;
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);

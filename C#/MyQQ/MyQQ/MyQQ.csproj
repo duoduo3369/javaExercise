@@ -11,12 +11,29 @@
     <RootNamespace>MyQQ</RootNamespace>
     <AssemblyName>MyQQ</AssemblyName>
     <ApplicationIcon>myQQ.ico</ApplicationIcon>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\MyQQ\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,17 +54,37 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DC6A5889EFCB500B86E96A04185ACAE95E16611E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MyQQ_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SideBar, Version=1.0.2813.28543, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbmanagers\entityManagers\EntityCommandManager.cs" />
+    <Compile Include="dbmanagers\entityManagers\EntityConnectionManager.cs" />
     <Compile Include="dbmanagers\sqlDbManagers\SqlDataAdapterManager.cs" />
+    <Compile Include="EntityFrameworkCRUD.cs" />
+    <Compile Include="factorys\EntityManagerFactory.cs" />
     <Compile Include="factorys\SqlManagerFactory.cs" />
     <Compile Include="forms\ChatForm.cs">
       <SubType>Form</SubType>
@@ -71,6 +108,11 @@
     </Compile>
     <Compile Include="interfaces\IDataAdapter.cs" />
     <Compile Include="interfaces\IDbManagerFactory.cs" />
+    <Compile Include="MyQQModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyQQModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="utils\DBHelper.cs" />
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -127,7 +169,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>RequestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchFriendForm.resx">
+    <EmbeddedResource Include="forms\SearchFriendForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>SearchFriendForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,7 +178,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="MyQQModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyQQModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MyQQ_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\MyQQEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,10 +202,10 @@
     <Compile Include="forms\RequestForm.Designer.cs">
       <DependentUpon>RequestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchFriendForm.cs">
+    <Compile Include="forms\SearchFriendForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchFriendForm.Designer.cs">
+    <Compile Include="forms\SearchFriendForm.Designer.cs">
       <DependentUpon>SearchFriendForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserHelper.cs" />
@@ -165,6 +215,31 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0d247a5a-b4e3-4a6f-a3a1-8e5c7e9531a0" name="Administrator@PC201303101751 2013-04-15 14:09:43" runUser="PC201303101751\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="c01c5c29-c5de-4fb5-8960-d83782060d91">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="Administrator_PC201303101751 2013-04-15 14_09_43">
+      <DeploymentItem filename="E:\VSProject\MyQQ\MyQQ\bin\Debug\MyQQ.exe" />
+      <DeploymentItem filename="E:\VSProject\MyQQ\MyQQ\bin\Debug\SideBar.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-04-15T14:09:43.9909050+08:00" queuing="2013-04-15T14:09:46.2430338+08:00" start="2013-04-15T14:09:46.3760414+08:00" finish="2013-04-15T14:09:47.9051288+08:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CountTest" storage="e:\vsproject\myqq\testmyqq\bin\debug\testmyqq.dll" id="d0734733-d5a1-8f31-a432-02844054dcac">
+      <Execution id="10feaa35-6de4-438b-9b1c-e997fa2a50c8" />
+      <TestMethod codeBase="E:/VSProject/MyQQ/TestMyQQ/bin/Debug/TestMyQQ.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestMyQQ.EntityFrameworkCRUDTest, TestMyQQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CountTest" />
+    </UnitTest>
+    <UnitTest name="EntityFrameworkCRUDConstructorTest" storage="e:\vsproject\myqq\testmyqq\bin\debug\testmyqq.dll" id="50c6a964-f8ec-1e11-8aa0-a7f17bde8ee5">
+      <Execution id="76040dc1-3191-4c97-b73f-94933e17a934" />
+      <TestMethod codeBase="E:/VSProject/MyQQ/TestMyQQ/bin/Debug/TestMyQQ.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestMyQQ.EntityFrameworkCRUDTest, TestMyQQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EntityFrameworkCRUDConstructorTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="50c6a964-f8ec-1e11-8aa0-a7f17bde8ee5" executionId="76040dc1-3191-4c97-b73f-94933e17a934" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0734733-d5a1-8f31-a432-02844054dcac" executionId="10feaa35-6de4-438b-9b1c-e997fa2a50c8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="76040dc1-3191-4c97-b73f-94933e17a934" testId="50c6a964-f8ec-1e11-8aa0-a7f17bde8ee5" testName="EntityFrameworkCRUDConstructorTest" computerName="PC201303101751" duration="00:00:00.2385771" startTime="2013-04-15T14:09:46.4020429+08:00" endTime="2013-04-15T14:09:47.7981227+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="76040dc1-3191-4c97-b73f-94933e17a934">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 TestMyQQ.EntityFrameworkCRUDTest.EntityFrameworkCRUDConstructorTest 引发了异常: 
+System.NullReferenceException: 未将对象引用设置到对象的实例。</Message>
+          <StackTrace>    在 MyQQ.dbmanagers.sqlDbManagers.entityManagers.EntityConnectionManager.GetConnection() 位置 E:\VSProject\MyQQ\MyQQ\dbmanagers\entityManagers\EntityConnectionManager.cs:行号 20
+   在 MyQQ.EntityFrameworkCRUD..ctor() 位置 E:\VSProject\MyQQ\MyQQ\EntityFrameworkCRUD.cs:行号 24
+   在 TestMyQQ.EntityFrameworkCRUDTest.EntityFrameworkCRUDConstructorTest() 位置 E:\VSProject\MyQQ\TestMyQQ\EntityFrameworkCRUDTest.cs:行号 74
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="10feaa35-6de4-438b-9b1c-e997fa2a50c8" testId="d0734733-d5a1-8f31-a432-02844054dcac" testName="CountTest" computerName="PC201303101751" duration="00:00:00.0054822" startTime="2013-04-15T14:09:47.8191239+08:00" endTime="2013-04-15T14:09:47.8371250+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10feaa35-6de4-438b-9b1c-e997fa2a50c8">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 TestMyQQ.EntityFrameworkCRUDTest.CountTest 引发了异常: 
+System.NullReferenceException: 未将对象引用设置到对象的实例。</Message>
+          <StackTrace>    在 MyQQ.dbmanagers.sqlDbManagers.entityManagers.EntityConnectionManager.GetConnection() 位置 E:\VSProject\MyQQ\MyQQ\dbmanagers\entityManagers\EntityConnectionManager.cs:行号 20
+   在 MyQQ.EntityFrameworkCRUD..ctor() 位置 E:\VSProject\MyQQ\MyQQ\EntityFrameworkCRUD.cs:行号 24
+   在 TestMyQQ.EntityFrameworkCRUDTest.CountTest() 位置 E:\VSProject\MyQQ\TestMyQQ\EntityFrameworkCRUDTest.cs:行号 85
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

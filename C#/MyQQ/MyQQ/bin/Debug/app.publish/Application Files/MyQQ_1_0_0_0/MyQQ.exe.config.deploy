@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <connectionStrings>
+    <add name="MyQQ.Properties.Settings.MyQQConnectionString" connectionString="Data Source=.;Initial Catalog=MyQQ;Persist Security Info=True;User ID=sa" providerName="System.Data.SqlClient" />
+    <add name="MyQQConnection" connectionString="Data Source=.;Initial Catalog=MyQQ;User ID=sa;Pwd=sa" /><add name="MyQQEntities" connectionString="metadata=res://*/MyQQModel.csdl|res://*/MyQQModel.ssdl|res://*/MyQQModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.;Initial Catalog=MyQQ;Persist Security Info=True;User ID=sa;Password=sa;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" /></connectionStrings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+  </startup>
+</configuration>

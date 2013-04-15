@@ -5,7 +5,7 @@ using MyQQ.interfaces;
 using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace MyQQ.utils
+namespace MyQQ.dbmanagers.sqlDbManagers.sqlDbManagers
 {
     class SqlCommandManager:ICommand
     {

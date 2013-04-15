@@ -23,7 +23,6 @@ namespace MyQQ
         {
             InitializeComponent();
         }
-
         // 窗体加载时的动作
         private void ChatForm_Load(object sender, EventArgs e)
         {

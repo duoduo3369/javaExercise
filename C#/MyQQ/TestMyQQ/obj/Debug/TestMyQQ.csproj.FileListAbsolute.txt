@@ -1,0 +1,9 @@
+E:\VSProject\MyQQ\TestMyQQ\bin\Debug\TestMyQQ.dll.config
+E:\VSProject\MyQQ\TestMyQQ\bin\Debug\TestMyQQ.dll
+E:\VSProject\MyQQ\TestMyQQ\bin\Debug\TestMyQQ.pdb
+E:\VSProject\MyQQ\TestMyQQ\bin\Debug\MyQQ.exe
+E:\VSProject\MyQQ\TestMyQQ\bin\Debug\SideBar.dll
+E:\VSProject\MyQQ\TestMyQQ\bin\Debug\MyQQ.pdb
+E:\VSProject\MyQQ\TestMyQQ\obj\Debug\ResolveAssemblyReference.cache
+E:\VSProject\MyQQ\TestMyQQ\obj\Debug\TestMyQQ.dll
+E:\VSProject\MyQQ\TestMyQQ\obj\Debug\TestMyQQ.pdb

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyQQModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MyQQModelStoreContainer">
+    <EntitySet Name="BloodType" EntityType="MyQQModel.Store.BloodType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Friends" EntityType="MyQQModel.Store.Friends" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FriendshipPolicy" EntityType="MyQQModel.Store.FriendshipPolicy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="MyQQModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageType" EntityType="MyQQModel.Store.MessageType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Star" EntityType="MyQQModel.Store.Star" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="MyQQModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo" EntityType="MyQQModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="MyQQModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Friends_Users" Association="MyQQModel.Store.FK_Friends_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Friends" EntitySet="Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friends_Users1" Association="MyQQModel.Store.FK_Friends_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Friends" EntitySet="Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_MessageType" Association="MyQQModel.Store.FK_Messages_MessageType">
+      <End Role="MessageType" EntitySet="MessageType" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users" Association="MyQQModel.Store.FK_Messages_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users1" Association="MyQQModel.Store.FK_Messages_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_Users" Association="MyQQModel.Store.FK_UserInfo_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_BloodType" Association="MyQQModel.Store.FK_Users_BloodType">
+      <End Role="BloodType" EntitySet="BloodType" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_FriendshipPolicy" Association="MyQQModel.Store.FK_Users_FriendshipPolicy">
+      <End Role="FriendshipPolicy" EntitySet="FriendshipPolicy" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Star" Association="MyQQModel.Store.FK_Users_Star">
+      <End Role="Star" EntitySet="Star" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BloodType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BloodType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Friends">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HostId" Type="int" Nullable="false" />
+    <Property Name="FriendId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FriendshipPolicy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FriendshipPolicy" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FromUserId" Type="int" Nullable="false" />
+    <Property Name="ToUserId" Type="int" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="50" />
+    <Property Name="MessageTypeId" Type="int" Nullable="false" />
+    <Property Name="MessageState" Type="int" Nullable="false" />
+    <Property Name="MessageTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessageType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Star">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Star" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="isLogin" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LoginPwd" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FriendshipPolicyId" Type="int" Nullable="false" />
+    <Property Name="NickName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FaceId" Type="int" Nullable="false" />
+    <Property Name="Sex" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="StarId" Type="int" />
+    <Property Name="BloodTypeId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Friends_Users">
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="1" />
+    <End Role="Friends" Type="MyQQModel.Store.Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Friends">
+        <PropertyRef Name="HostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friends_Users1">
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="1" />
+    <End Role="Friends" Type="MyQQModel.Store.Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Friends">
+        <PropertyRef Name="FriendId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_MessageType">
+    <End Role="MessageType" Type="MyQQModel.Store.MessageType" Multiplicity="1" />
+    <End Role="Messages" Type="MyQQModel.Store.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="MessageTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users">
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="1" />
+    <End Role="Messages" Type="MyQQModel.Store.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="FromUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users1">
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="1" />
+    <End Role="Messages" Type="MyQQModel.Store.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="ToUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_Users">
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="1" />
+    <End Role="UserInfo" Type="MyQQModel.Store.UserInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_BloodType">
+    <End Role="BloodType" Type="MyQQModel.Store.BloodType" Multiplicity="0..1" />
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BloodType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="BloodTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_FriendshipPolicy">
+    <End Role="FriendshipPolicy" Type="MyQQModel.Store.FriendshipPolicy" Multiplicity="1" />
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FriendshipPolicy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="FriendshipPolicyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Star">
+    <End Role="Star" Type="MyQQModel.Store.Star" Multiplicity="0..1" />
+    <End Role="Users" Type="MyQQModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Star">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="StarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

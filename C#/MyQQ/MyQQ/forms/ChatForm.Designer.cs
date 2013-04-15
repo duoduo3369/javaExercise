@@ -229,6 +229,7 @@
             this.ilFaces.Images.SetKeyName(98, "99");
             this.ilFaces.Images.SetKeyName(99, "100");
             this.ilFaces.Images.SetKeyName(100, "back.bmp");
+            this.ilFaces.Images.SetKeyName(101, "101.bmp");
             // 
             // ChatForm
             // 

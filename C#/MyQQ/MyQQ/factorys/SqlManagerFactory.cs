@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using MyQQ.interfaces;
-using MyQQ.utils;
-using MyQQ.dbmanagers;
+using MyQQ.dbmanagers.sqlDbManagers.sqlDbManagers;
+using MyQQ.dbmanagers.sqlDbManagers;
 
 namespace MyQQ.factorys
 {

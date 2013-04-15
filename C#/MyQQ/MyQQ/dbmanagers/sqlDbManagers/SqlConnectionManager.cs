@@ -4,19 +4,19 @@ using System.Text;
 using MyQQ.interfaces;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Configuration;
 
-namespace MyQQ.utils
+namespace MyQQ.dbmanagers.sqlDbManagers.sqlDbManagers
 {
     class SqlConnectionManager : IConnection
     {
-        private String connString;
         public SqlConnectionManager()
         {
-            connString = DBHelper.GetConnectionString();
         }
         public DbConnection GetConnection()
         {
-            return new SqlConnection(connString);
+
+            return new SqlConnection(ConfigurationManager.ConnectionStrings["MyQQConnection"].ConnectionString);
         }
 
         public void ReleaseConnection(DbConnection connection)

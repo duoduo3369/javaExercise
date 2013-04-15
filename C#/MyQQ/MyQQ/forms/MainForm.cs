@@ -9,7 +9,10 @@ using Aptech.UI;
 using System.Data.SqlClient;
 using System.Media;
 using System.Data.Common;
-using MyQQ.utils;
+using MyQQ.dbmanagers.sqlDbManagers.sqlDbManagers;
+using System.Linq;
+using System.Data.EntityClient;
+using MyQQ.dbmanagers.sqlDbManagers.entityManagers;
 
 namespace MyQQ
 {
@@ -22,7 +25,7 @@ namespace MyQQ
         int friendFaceId;  // 发消息的好友的头像Id  
 
         int messageImageIndex = 0;  // 工具栏中的消息图标的索引
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -33,10 +36,10 @@ namespace MyQQ
         {
             // 工具栏的消息图标
             tsbtnMessageReading.Image = ilMessage.Images[0];
-            
+
             // 显示个人的信息            
             ShowSelfInfo();
-            
+
             // 添加 SideBar 的两个组
             sbFriends.AddGroup("我的好友");
             sbFriends.AddGroup("陌生人");
@@ -48,6 +51,9 @@ namespace MyQQ
         // 窗体关闭后，退出应用程序
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            UserInfo userinfo = DBHelper.GetEntities().UserInfoes.First<UserInfo>(item => item.userId == UserHelper.loginId);
+            userinfo.isLogin = "F";
+            DBHelper.GetEntities().SaveChanges();
             Application.Exit();
         }
 
@@ -62,8 +68,8 @@ namespace MyQQ
         // 显示查找好友窗体
         private void tsbtnSearchFriend_Click(object sender, EventArgs e)
         {
-            SearchFriendForm searchFriendForm = new SearchFriendForm();
-            searchFriendForm.Show();
+            //SearchFriendForm searchFriendForm = new SearchFriendForm();
+            //searchFriendForm.Show();
         }
 
         // 双击一项，弹出聊天窗体        
@@ -72,7 +78,7 @@ namespace MyQQ
             // 消息timer停止运行
             if (tmrChatRequest.Enabled == true)
             {
-                tmrChatRequest.Stop();                
+                tmrChatRequest.Stop();
                 e.Item.ImageIndex = this.friendFaceId;
             }
 
@@ -101,7 +107,7 @@ namespace MyQQ
             string sql = string.Format(
                 "SELECT Top 1 FromUserId, MessageTypeId, MessageState FROM Messages WHERE ToUserId={0} AND MessageState=0", UserHelper.loginId);
             DbCommand command;
-             
+
             // 消息有两种类型：聊天消息、添加好友消息
             try
             {
@@ -141,7 +147,7 @@ namespace MyQQ
                 sql = "SELECT FaceId FROM Users WHERE Id=" + this.fromUserId;
                 try
                 {
-                    command = DBHelper.GetCommand(sql, DBHelper.GetConnection()); 
+                    command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
                     DBHelper.OpenConnection();
                     this.friendFaceId = Convert.ToInt32(command.ExecuteScalar());   // 设置发消息的好友的头像索引
                 }
@@ -169,7 +175,7 @@ namespace MyQQ
         private void tmrAddFriend_Tick(object sender, EventArgs e)
         {
             // 反复修改它的图像
-            messageImageIndex = messageImageIndex == 0 ? 1:0;
+            messageImageIndex = messageImageIndex == 0 ? 1 : 0;
             tsbtnMessageReading.Image = ilMessage.Images[messageImageIndex];
         }
 
@@ -289,10 +295,10 @@ namespace MyQQ
                     {
                         MessageBox.Show("好友已删除", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         sbFriends.SeletedItem.Parent.Items.Remove(sbFriends.SeletedItem);
-                    }                    
+                    }
                 }
             }
-        }        
+        }
 
         // 将选中的人加为好友              
         private void tsmiAddFriend_Click(object sender, EventArgs e)
@@ -306,7 +312,7 @@ namespace MyQQ
             {
                 DbCommand command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
                 DBHelper.OpenConnection();
-                result = command.ExecuteNonQuery();                
+                result = command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -319,7 +325,7 @@ namespace MyQQ
             if (result == 1)
             {
                 MessageBox.Show("添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                sbFriends.SeletedItem.Parent.Items.Remove(sbFriends.SeletedItem);  
+                sbFriends.SeletedItem.Parent.Items.Remove(sbFriends.SeletedItem);
                 ShowFriendList();   // 更新好友列表             
             }
             else
@@ -343,7 +349,7 @@ namespace MyQQ
         {
             SoundPlayer player = new SoundPlayer("folder.wav");
             player.Play();
-        }        
+        }
 
         /// <summary>
         /// 登录后显示个人的信息
@@ -371,13 +377,13 @@ namespace MyQQ
                     {
                         nickName = Convert.ToString(dataReader["NickName"]);
                     }
-                    faceId = Convert.ToInt32(dataReader["FaceId"]); 
+                    faceId = Convert.ToInt32(dataReader["FaceId"]);
                 }
                 dataReader.Close();
             }
             catch (Exception ex)
             {
-                error = true;                
+                error = true;
                 Console.WriteLine(ex.Message);
             }
             finally
@@ -397,7 +403,7 @@ namespace MyQQ
                 this.Text = UserHelper.loginId.ToString();
                 this.picFace.Image = ilFaces.Images[faceId];
                 this.lblLoginId.Text = string.Format("{0}({1})", nickName, UserHelper.loginId.ToString());
-            }            
+            }
         }
 
         /// <summary>
@@ -405,6 +411,7 @@ namespace MyQQ
         /// </summary>
         private void ShowFriendList()
         {
+            Console.WriteLine("Mainform.cs ShowFriendList");
             // 清空原来的列表
             sbFriends.Groups[0].Items.Clear();
 
@@ -416,27 +423,40 @@ namespace MyQQ
                 UserHelper.loginId);
             try
             {
-                // 执行查询
-                //TODO:重写DBHelpler后改写下面这个connectin代码,并且删除注释的代码
-                //DbCommand command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
-                DbConnection connection = (new SqlConnectionManager()).GetConnection();
+                DbConnection connection = DBHelper.GetConnection();
                 DbCommand command = DBHelper.GetCommand(sql, connection);
-                connection.Open();
-                DbDataReader dataReader = command.ExecuteReader(); 
-                //DbCommand command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
-                //DBHelper.connection.Open();
-                //SqlDataReader dataReader = command.ExecuteReader();
-
+                DBHelper.OpenConnection();
+                DbDataReader dataReader = command.ExecuteReader();
+                UserInfo userinfo;
+                int frindId;
                 // 循环添加好友列表
+                MyQQEntities entities = DBHelper.GetNewEntities();
                 while (dataReader.Read())
                 {
                     // 创建一个SideBar项
-                    SbItem item = new SbItem((string)dataReader["NickName"], (int)dataReader["FaceId"]);
-                    item.Tag = (int)dataReader["FriendId"]; // 将号码放在Tag属性中
+                    frindId = (int)dataReader["FriendId"];
+                    userinfo = entities.UserInfoes.First<UserInfo>(item => item.userId == frindId);
+                    if (userinfo.isLogin.Equals("T"))
+                    { 
+                        Console.WriteLine("userinfo:T  "+ userinfo.isLogin + " id" + userinfo.userId);
+                        SbItem sbitem = new SbItem((string)dataReader["NickName"], (int)dataReader["FaceId"]);
 
-                    // SideBar中的组可以通过数组的方式访问，按照添加的顺序索引从0开始
-                    // Groups[0]表示SideBar中的第一个组，也就是“我的好友”组
-                    sbFriends.Groups[0].Items.Add(item); // 向SideBar的“我的好友”组中添加项
+                        sbitem.Tag = (int)dataReader["FriendId"]; // 将号码放在Tag属性中
+
+                        // SideBar中的组可以通过数组的方式访问，按照添加的顺序索引从0开始
+                        // Groups[0]表示SideBar中的第一个组，也就是“我的好友”组
+                        sbFriends.Groups[0].Items.Add(sbitem); // 向SideBar的“我的好友”组中添加项
+                    }
+                    else 
+                    {
+                        SbItem sbitem = new SbItem((string)dataReader["NickName"], 101);
+
+                        sbitem.Tag = (int)dataReader["FriendId"]; // 将号码放在Tag属性中
+
+                        // SideBar中的组可以通过数组的方式访问，按照添加的顺序索引从0开始
+                        // Groups[0]表示SideBar中的第一个组，也就是“我的好友”组
+                        sbFriends.Groups[0].Items.Add(sbitem); // 向SideBar的“我的好友”组中添加项
+                    }
                 }
 
                 dataReader.Close();
@@ -456,8 +476,8 @@ namespace MyQQ
                 MessageBox.Show("服务器发生意外错误！请尝试重新登录", "抱歉", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
-        }        
-         
+        }
+
         /// <summary>
         /// 判断发消息的人是否在列表中
         /// </summary>        
@@ -472,13 +492,13 @@ namespace MyQQ
                 {
                     if (Convert.ToInt32(sbFriends.Groups[i].Items[j].Tag) == loginId)
                     {
-                        find = true;                        
+                        find = true;
                     }
                 }
             }
             return find;
         }
-       
+
         /// <summary>
         /// 更新陌生人列表
         /// </summary>        
@@ -490,7 +510,7 @@ namespace MyQQ
             try
             {
                 DbCommand command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
-                DBHelper.OpenConnection();                
+                DBHelper.OpenConnection();
                 DbDataReader dataReader = command.ExecuteReader(); // 查询
                 if (dataReader.Read())
                 {
@@ -513,8 +533,8 @@ namespace MyQQ
             // 出错了
             if (error)
             {
-                MessageBox.Show("服务器出现意外错误！", "抱歉", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                MessageBox.Show("服务器出现意外错误！", "抱歉", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }        
+        }
     }
 }

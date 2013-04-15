@@ -7,8 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Common;
-using MyQQ.utils;
-
+using MyQQ.dbmanagers.sqlDbManagers.sqlDbManagers;
+using System.Data.EntityClient;
+using System.Linq;
 namespace MyQQ
 {
     /// <summary>
@@ -38,7 +39,6 @@ namespace MyQQ
         private void btnLogin_Click(object sender, EventArgs e)
         {
             bool error = false;   // 标志在执行数据库操作的过程中是否出错
-
             // 如果输入验证成功，就验证身份，并转到相应的窗体
             if (ValidateInput())
             {
@@ -46,31 +46,23 @@ namespace MyQQ
                 try
                 {
                     // 查询用的sql语句
-                    string sql = string.Format("SELECT COUNT(*) FROM Users WHERE Id={0} AND LoginPwd = '{1}'",
-                        int.Parse(txtLoginId.Text.Trim()), txtLoginPwd.Text.Trim());
-                    // 创建Command 对象
-                    //TODO:重写DBHelpler后改写下面这个connectin代码,并且删除注释的代码
-
-                    DbCommand command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
-                    DBHelper.OpenConnection();
-                    //DbDataReader reader = command.ExecuteReader();
-                    //DBHelper.ColseConnection();
-                    num = Convert.ToInt32(command.ExecuteScalar());
+                    int loginId = int.Parse(txtLoginId.Text.Trim());
+                    String password = txtLoginPwd.Text.Trim();
+                    num = DBHelper.GetEntities().Users.Count<User>(item => item.Id == loginId && item.LoginPwd == password);
                 }
                 catch (Exception ex)
                 {
                     error = true;
                     Console.WriteLine(ex.Message);
                 }
-                finally
-                {
-                    DBHelper.ColseConnection();  // 关闭数据库连接
-                }
 
                 if (!error && (num == 1))  // 验证通过
                 {
                     // 设置登录的用户号码
                     UserHelper.loginId = int.Parse(txtLoginId.Text.Trim());
+                    UserInfo userinfo = DBHelper.GetEntities().UserInfoes.First<UserInfo>(item => item.userId == UserHelper.loginId);
+                    userinfo.isLogin = "T";
+                    DBHelper.GetEntities().SaveChanges();
                     // 创建主窗体
                     MainForm mainForm = new MainForm();
                     mainForm.Show();  // 显示窗体
