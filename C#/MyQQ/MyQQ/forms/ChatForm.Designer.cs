@@ -33,12 +33,12 @@
             this.lblFriend = new System.Windows.Forms.Label();
             this.picFace = new System.Windows.Forms.PictureBox();
             this.pnlMessages = new System.Windows.Forms.Panel();
-            this.lblMessages = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtChat = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.ilFaces = new System.Windows.Forms.ImageList(this.components);
+            this.lblMessages = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picFace)).BeginInit();
             this.pnlMessages.SuspendLayout();
             this.SuspendLayout();
@@ -78,13 +78,6 @@
             this.pnlMessages.Name = "pnlMessages";
             this.pnlMessages.Size = new System.Drawing.Size(355, 202);
             this.pnlMessages.TabIndex = 2;
-            // 
-            // lblMessages
-            // 
-            this.lblMessages.Location = new System.Drawing.Point(-1, 27);
-            this.lblMessages.Name = "lblMessages";
-            this.lblMessages.Size = new System.Drawing.Size(355, 173);
-            this.lblMessages.TabIndex = 3;
             // 
             // label1
             // 
@@ -231,6 +224,17 @@
             this.ilFaces.Images.SetKeyName(100, "back.bmp");
             this.ilFaces.Images.SetKeyName(101, "101.bmp");
             // 
+            // lblMessages
+            // 
+            this.lblMessages.Location = new System.Drawing.Point(0, 26);
+            this.lblMessages.Multiline = true;
+            this.lblMessages.Name = "lblMessages";
+            this.lblMessages.ReadOnly = true;
+            this.lblMessages.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.lblMessages.Size = new System.Drawing.Size(350, 175);
+            this.lblMessages.TabIndex = 3;
+            this.lblMessages.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // ChatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -251,6 +255,7 @@
             this.Load += new System.EventHandler(this.ChatForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFace)).EndInit();
             this.pnlMessages.ResumeLayout(false);
+            this.pnlMessages.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,11 +266,11 @@
         private System.Windows.Forms.Label lblFriend;
         private System.Windows.Forms.PictureBox picFace;
         private System.Windows.Forms.Panel pnlMessages;
-        private System.Windows.Forms.Label lblMessages;
         private System.Windows.Forms.TextBox txtChat;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ImageList ilFaces;
+        private System.Windows.Forms.TextBox lblMessages;
     }
 }

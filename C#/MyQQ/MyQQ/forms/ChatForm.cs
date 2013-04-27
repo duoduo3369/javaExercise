@@ -22,6 +22,7 @@ namespace MyQQ
         public ChatForm()
         {
             InitializeComponent();
+            
         }
 
         // 窗体加载时的动作
@@ -33,9 +34,10 @@ namespace MyQQ
             // 设置窗体顶部显示的好友信息
             picFace.Image = ilFaces.Images[faceId];
             lblFriend.Text = string.Format("{0}({1})", nickName, friendId);
-
+            txtChat.Focus();
             // 读取所有的未读消息，显示在窗体中
             ShowMessage(true);
+            
         }
 
         // 关闭窗体
@@ -88,6 +90,7 @@ namespace MyQQ
                 txtChat.Text = "";  // 输入消息清空
                 //this.Close();
                 ShowMessage(false);
+                txtChat.Focus();
             }
         }
 
@@ -128,7 +131,7 @@ namespace MyQQ
                     message = Convert.ToString(reader["Message"]);
                     messageTime = Convert.ToDateTime(reader["MessageTime"]).ToString(); // 转换为日期类型，告诉学员
 
-                    lblMessages.Text += string.Format("\n{0}  {1}\n  {2}", nickName, messageTime, message);
+                    lblMessages.Text += string.Format("\r\n{0}  {1}\r\n  {2}\r\n", nickName, messageTime, message);
                 }
 
 
@@ -187,6 +190,26 @@ namespace MyQQ
         {
             Dictionary<String, ChatForm> chatForms = MainForm.GetChatFormDictionary();
             chatForms.Remove(Convert.ToString(friendId));
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            Size tS = TextRenderer.MeasureText(tb.Text, tb.Font);
+            bool Hsb = tb.ClientSize.Height < tS.Height + Convert.ToInt32(tb.Font.Size);
+            bool Vsb = tb.ClientSize.Width < tS.Width;
+
+            if (Hsb && Vsb)
+                tb.ScrollBars = ScrollBars.Both;
+            else if (!Hsb && !Vsb)
+                tb.ScrollBars = ScrollBars.None;
+            else if (Hsb && !Vsb)
+                tb.ScrollBars = ScrollBars.Vertical;
+            else if (!Hsb && Vsb)
+                tb.ScrollBars = ScrollBars.Horizontal;
+
+            this.lblMessages.SelectionStart = this.lblMessages.Text.Length;
+            this.lblMessages.SelectionLength = 0;
+            this.lblMessages.ScrollToCaret(); 
         }
     }
 }

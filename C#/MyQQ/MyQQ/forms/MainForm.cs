@@ -129,7 +129,7 @@ namespace MyQQ
             // 消息有两种类型：聊天消息、添加好友消息
             try
             {
-                command = command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
+                command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
                 DBHelper.OpenConnection();
                 DbDataReader dataReader = command.ExecuteReader();
 
