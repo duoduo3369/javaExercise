@@ -25,10 +25,15 @@ namespace MyQQ
         int friendFaceId;  // 发消息的好友的头像Id  
 
         int messageImageIndex = 0;  // 工具栏中的消息图标的索引
-
+        private static Dictionary<String, ChatForm> chatForms = new Dictionary<string, ChatForm>();
+        public static Dictionary<String, ChatForm> GetChatFormDictionary()
+        {
+            return chatForms;
+        }
         public MainForm()
         {
             InitializeComponent();
+            tmrChatForm.Start();
         }
 
         // 窗体加载时发生
@@ -71,6 +76,14 @@ namespace MyQQ
             //SearchFriendForm searchFriendForm = new SearchFriendForm();
             //searchFriendForm.Show();
         }
+        public void upDateChatForms() 
+        {
+            foreach(KeyValuePair<String,ChatForm> chatForm in chatForms)
+            {
+                ChatForm form = chatForm.Value;
+                form.ShowMessage(true);
+            }
+        }
 
         // 双击一项，弹出聊天窗体        
         private void sbFriends_ItemDoubleClick(SbItemEventArgs e)
@@ -81,9 +94,14 @@ namespace MyQQ
                 tmrChatRequest.Stop();
                 e.Item.ImageIndex = this.friendFaceId;
             }
-
+            ChatForm chatForm = null;
+            String friendId = Convert.ToString(e.Item.Tag);
             // 显示聊天窗体
-            ChatForm chatForm = new ChatForm();
+            if (!chatForms.ContainsKey(friendId))
+            {
+                chatForms.Add(friendId, new ChatForm());
+            }
+            chatForm = chatForms[friendId]; 
             chatForm.friendId = Convert.ToInt32(e.Item.Tag); // 号码
             chatForm.nickName = e.Item.Text;  // 昵称
             chatForm.faceId = e.Item.ImageIndex;  // 头像
@@ -437,8 +455,8 @@ namespace MyQQ
                     frindId = (int)dataReader["FriendId"];
                     userinfo = entities.UserInfoes.First<UserInfo>(item => item.userId == frindId);
                     if (userinfo.isLogin.Equals("T"))
-                    { 
-                        Console.WriteLine("userinfo:T  "+ userinfo.isLogin + " id" + userinfo.userId);
+                    {
+                        Console.WriteLine("userinfo:T  " + userinfo.isLogin + " id" + userinfo.userId);
                         SbItem sbitem = new SbItem((string)dataReader["NickName"], (int)dataReader["FaceId"]);
 
                         sbitem.Tag = (int)dataReader["FriendId"]; // 将号码放在Tag属性中
@@ -447,7 +465,7 @@ namespace MyQQ
                         // Groups[0]表示SideBar中的第一个组，也就是“我的好友”组
                         sbFriends.Groups[0].Items.Add(sbitem); // 向SideBar的“我的好友”组中添加项
                     }
-                    else 
+                    else
                     {
                         SbItem sbitem = new SbItem((string)dataReader["NickName"], 101);
 
@@ -470,7 +488,7 @@ namespace MyQQ
             {
                 DBHelper.ColseConnection();
             }
-            // 出错了
+            // 出错了
             if (error)
             {
                 MessageBox.Show("服务器发生意外错误！请尝试重新登录", "抱歉", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -535,6 +553,11 @@ namespace MyQQ
             {
                 MessageBox.Show("服务器出现意外错误！", "抱歉", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tmrChatForm_Tick(object sender, EventArgs e)
+        {
+            upDateChatForms();
         }
     }
 }

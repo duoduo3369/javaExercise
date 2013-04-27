@@ -23,18 +23,19 @@ namespace MyQQ
         {
             InitializeComponent();
         }
+
         // 窗体加载时的动作
         private void ChatForm_Load(object sender, EventArgs e)
         {
             // 设置窗体标题
-            this.Text = string.Format("与{0}聊天中",nickName);
+            this.Text = string.Format("与{0}聊天中", nickName);
 
             // 设置窗体顶部显示的好友信息
             picFace.Image = ilFaces.Images[faceId];
-            lblFriend.Text = string.Format("{0}({1})",nickName,friendId);
+            lblFriend.Text = string.Format("{0}({1})", nickName, friendId);
 
             // 读取所有的未读消息，显示在窗体中
-            ShowMessage();
+            ShowMessage(true);
         }
 
         // 关闭窗体
@@ -83,24 +84,36 @@ namespace MyQQ
                 {
                     MessageBox.Show("服务器出现意外错误！", "抱歉", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 txtChat.Text = "";  // 输入消息清空
-                this.Close();
+                //this.Close();
+                ShowMessage(false);
             }
         }
 
         /// <summary>
         /// 读取所有的未读消息，显示在窗体中
         /// </summary>
-        private void ShowMessage()
+        public void ShowMessage(bool flag)
         {
             string messageIdsString = "";  // 消息的Id组成的字符串
             string message;         // 消息内容
             string messageTime;     // 消息发出的时间
 
             // 读取消息的SQL语句
-            string sql = string.Format(
-                "SELECT Id, Message,MessageTime From Messages WHERE FromUserId={0} AND ToUserId={1} AND MessageTypeId=1 AND MessageState=0",
-                friendId,UserHelper.loginId);
+            string sql;
+            if (flag)
+            {
+                sql = string.Format(
+                    "SELECT Id, Message,MessageTime From Messages WHERE FromUserId={0} AND ToUserId={1} AND MessageTypeId=1 AND MessageState=0",
+                    friendId, UserHelper.loginId);
+            }
+            else
+            {
+                sql = string.Format(
+                    "SELECT top 1 Id, Message,MessageTime From Messages WHERE FromUserId={0} AND ToUserId={1} AND MessageTypeId=1 AND MessageState=0 order by id desc",
+                    UserHelper.loginId, friendId);
+            }
             try
             {
                 DbCommand command = DBHelper.GetCommand(sql, DBHelper.GetConnection());
@@ -108,16 +121,18 @@ namespace MyQQ
                 DbDataReader reader = command.ExecuteReader();
 
                 // 循环将消息添加到窗体上
+
                 while (reader.Read())
                 {
                     messageIdsString += Convert.ToString(reader["Id"]) + "_";
                     message = Convert.ToString(reader["Message"]);
                     messageTime = Convert.ToDateTime(reader["MessageTime"]).ToString(); // 转换为日期类型，告诉学员
 
-                    lblMessages.Text += string.Format("\n{0}  {1}\n  {2}",nickName,messageTime,message);
+                    lblMessages.Text += string.Format("\n{0}  {1}\n  {2}", nickName, messageTime, message);
                 }
 
-                reader.Close();                
+
+                reader.Close();
             }
             catch (Exception ex)
             {
@@ -128,11 +143,11 @@ namespace MyQQ
                 DBHelper.ColseConnection();
             }
             // 把显示出的消息置为已读
-            if (messageIdsString.Length > 1)
+            if (messageIdsString.Length > 1 && flag)
             {
                 messageIdsString.Remove(messageIdsString.Length - 1);
                 SetMessageRead(messageIdsString, '_');
-            }            
+            }
         }
 
         /// <summary>
@@ -166,6 +181,12 @@ namespace MyQQ
             {
                 DBHelper.ColseConnection();
             }
+        }
+
+        private void ChatForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Dictionary<String, ChatForm> chatForms = MainForm.GetChatFormDictionary();
+            chatForms.Remove(Convert.ToString(friendId));
         }
     }
 }

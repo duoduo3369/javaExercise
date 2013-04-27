@@ -49,6 +49,7 @@
             this.tmrAddFriend = new System.Windows.Forms.Timer(this.components);
             this.tmrChatRequest = new System.Windows.Forms.Timer(this.components);
             this.ilMessage = new System.Windows.Forms.ImageList(this.components);
+            this.tmrChatForm = new System.Windows.Forms.Timer(this.components);
             this.tsOperation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFace)).BeginInit();
             this.cmsFriendList.SuspendLayout();
@@ -343,6 +344,11 @@
             this.ilMessage.Images.SetKeyName(0, "MessageReading.gif");
             this.ilMessage.Images.SetKeyName(1, "Message.gif");
             // 
+            // tmrChatForm
+            // 
+            this.tmrChatForm.Interval = 500;
+            this.tmrChatForm.Tick += new System.EventHandler(this.tmrChatForm_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -393,5 +399,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAddFriend;
         private System.Windows.Forms.ToolStripButton tsbtnExit;
         private System.Windows.Forms.ImageList ilMessage;
+        private System.Windows.Forms.Timer tmrChatForm;
     }
 }
